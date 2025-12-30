@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: #0f0f0f;
+    color: #eee;
+  }
+
+  header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #222;
+  }
+
+  a {
+    color: #6cf;
+    text-decoration: none;
+  }
+
+  /* === GRID === */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .thumb {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .thumb:hover img {
+    transform: scale(1.05);
+  }
+
+  /* === LIGHTBOX === */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">← Back</a>
+</header>
+
+<div class="grid">
+  <div class="thumb"><img src="assets/images/111.png"></div>
+  <div class="thumb"><img src="assets/images/666.png"></div>
+  <div class="thumb"><img src="assets/images/232313.png"></div>
+  <div class="thumb"><img src="assets/images/armor.jpg"></div>
+  <div class="thumb"><img src="assets/images/blend1.png"></div>
+  <div class="thumb"><img src="assets/images/concept.png"></div>
+  <div class="thumb"><img src="assets/images/izabell.png"></div>
+  <div class="thumb"><img src="assets/images/Lavender.png"></div>
+  <div class="thumb"><img src="assets/images/report1.png"></div>
+  <div class="thumb"><img src="assets/images/report2.png"></div>
+  <div class="thumb"><img src="assets/images/report5.png"></div>
+  <div class="thumb"><img src="assets/images/Untitled.png"></div>
+  <div class="thumb"><img src="assets/images/Untitled_Artwork.jpg"></div>
+  <div class="thumb"><img src="assets/images/Untitled-1.png"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img">
+</div>
+
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  document.querySelectorAll(".thumb img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+</script>
+
+</body>
+</html>
