@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>octowild – Portfolio</title>
+
+  <!-- Makes the site scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Simple styling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #aaa;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #6cf;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Kaustubh Kaushal</h1>
+    <p>Animator • 3D Artist • Designer</p>
+  </header>
+
+  <section>
+    <h2>Animation</h2>
+    <div class="card">
+      <!-- Replace VIDEO_ID with your YouTube or Vimeo ID -->
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        frameborder="0" allowfullscreen>
+      </iframe>
+      <p>Demo reel – 2025</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>3D Work</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/images/render1.jpg" alt="3D render">
+        <p>Environment model</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/render2.jpg" alt="3D render">
+        <p>Character sculpt</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Comics / Illustration</h2>
+    <div class="grid">
+      <img src="assets/images/comic1.jpg">
+      <img src="assets/images/comic2.jpg">
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact: your@email.com</p>
+    <p>
+      <a href="https://github.com/yourusername">Gi

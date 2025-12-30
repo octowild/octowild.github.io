@@ -1,2 +1,12 @@
 # octowild.github.io
-Portfolio
+
+Animations
+
+Modeling & Sculpting
+
+Illustrations
+
+Comics
+
+Writing
+
