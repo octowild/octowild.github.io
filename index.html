@@ -2,49 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>octowild – Portfolio</title>
-
-  <!-- Makes the site scale correctly on phones -->
+  <title>Your Name – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Simple styling -->
   <style>
+    :root {
+      --bg: #0f0f0f;
+      --panel: #161616;
+      --text: #eaeaea;
+      --muted: #888;
+      --accent: #6cf;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, Arial, sans-serif;
-      background: #111;
-      color: #eee;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    header {
-      padding: 4rem 1rem;
-      text-align: center;
+    /* === LAYOUT === */
+    .layout {
+      display: flex;
+      min-height: 100vh;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    /* === SIDEBAR === */
+    .sidebar {
+      width: 220px;
+      background: var(--panel);
+      padding: 2rem 1.5rem;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
     }
 
-    header p {
-      color: #aaa;
-      max-width: 600px;
-      margin: auto;
+    .sidebar h1 {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav a {
+      display: block;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    /* === CONTENT === */
+    .content {
+      margin-left: 220px;
+      padding: 3rem;
+      width: 100%;
     }
 
     section {
       max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
+      margin-bottom: 5rem;
     }
 
     h2 {
+      margin-bottom: 1.5rem;
       border-bottom: 1px solid #333;
       padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
     }
 
+    /* === GRID === */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -52,7 +85,7 @@
     }
 
     .card {
-      background: #1a1a1a;
+      background: var(--panel);
       padding: 1rem;
       border-radius: 8px;
     }
@@ -63,61 +96,102 @@
     }
 
     footer {
-      text-align: center;
-      padding: 2rem;
-      color: #666;
+      color: var(--muted);
       font-size: 0.9rem;
+      margin-top: 4rem;
     }
 
-    a {
-      color: #6cf;
-      text-decoration: none;
+    /* === MOBILE === */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 2rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Kaustubh Kaushal</h1>
-    <p>Animator • 3D Artist • Designer</p>
-  </header>
+<div class="layout">
 
-  <section>
-    <h2>Animation</h2>
-    <div class="card">
-      <!-- Replace VIDEO_ID with your YouTube or Vimeo ID -->
-      <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        frameborder="0" allowfullscreen>
-      </iframe>
-      <p>Demo reel – 2025</p>
-    </div>
-  </section>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h1>Your Name</h1>
+    <nav class="nav">
+      <a href="#animation">Animation</a>
+      <a href="#3d">3D Work</a>
+      <a href="#comics">Comics</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
 
-  <section>
-    <h2>3D Work</h2>
-    <div class="grid">
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <section id="animation">
+      <h2>Animation</h2>
       <div class="card">
-        <img src="assets/images/render1.jpg" alt="3D render">
-        <p>Environment model</p>
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          frameborder="0" allowfullscreen>
+        </iframe>
+        <p>Demo Reel – 2025</p>
       </div>
-      <div class="card">
-        <img src="assets/images/render2.jpg" alt="3D render">
-        <p>Character sculpt</p>
+    </section>
+
+    <section id="3d">
+      <h2>3D Work</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/images/render1.jpg">
+          <p>Environment model</p>
+        </div>
+        <div class="card">
+          <img src="assets/images/render2.jpg">
+          <p>Character sculpt</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Comics / Illustration</h2>
-    <div class="grid">
-      <img src="assets/images/comic1.jpg">
-      <img src="assets/images/comic2.jpg">
-    </div>
-  </section>
+    <section id="comics">
+      <h2>Comics / Illustration</h2>
+      <div class="grid">
+        <img src="assets/images/comic1.jpg">
+        <img src="assets/images/comic2.jpg">
+      </div>
+    </section>
 
-  <footer>
-    <p>Contact: octowild@email.com</p>
-    <p>
-      <a href="https://github.com/octowild">Gi
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Short bio. Tools you use. What you want to work on.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: your@email.com</p>
+      <p>
+        <a href="https://github.com/yourusername">GitHub</a> ·
+        <a href="https://artstation.com/yourname">ArtStation</a>
+      </p>
+    </section>
+
+    <footer>
+      © 2025 Your Name
+    </footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>
