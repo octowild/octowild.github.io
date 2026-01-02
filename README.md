@@ -1,12 +1,2 @@
 # octowild.github.io
-
-Animations
-
-Modeling & Sculpting
-
-Illustrations
-
-Comics
-
-Writing
-
+Portfolio site of octowild | Kaustubh Kaushal
