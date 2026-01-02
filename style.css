@@ -4,15 +4,24 @@
   --text: #eaeaea;
   --muted: #888;
   --accent: #6cf;
+
+  --font-title:"Limelight", system-ui, sans-serif;
+  --font-body:"Roboto",system-ui,sans-serif;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
 }
@@ -21,32 +30,6 @@ body {
 .layout {
   display: flex;
   min-height: 100vh;
-}
-
-/* === SIDEBAR === */
-.sidebar {
-  width: 220px;
-  background: var(--panel);
-  padding: 2rem 1.5rem;
-  position: fixed;
-  inset: 0 auto 0 0;
-}
-
-.sidebar h1 {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-}
-
-.nav a {
-  display: block;
-  color: var(--muted);
-  text-decoration: none;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-}
-
-.nav a:hover {
-  color: var(--accent);
 }
 
 /* === CONTENT === */
@@ -62,10 +45,52 @@ section {
 }
 
 h2 {
+  font-family: var(--font-title);
+  letter-spacing: 0.02em;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #333;
   padding-bottom: 0.5rem;
 }
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.text-large {
+  font-size: 1.25rem;
+  font-family: var(--font-title);
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  width: 220px;
+  background: var(--panel);
+  padding: 2rem 1.5rem;
+  position: fixed;
+  inset: 0 auto 0 0;
+}
+
+.sidebar h1 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.nav a {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
 
 /* === GRID === */
 .grid {
