@@ -2,7 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer style={{ padding: '20px', textAlign: 'center', background: '#f1f1f1' }}>
+    <footer style={{ padding: '20px', textAlign: 'center', background: '#ffdcae' }}>
+      <p>octowild@gmail.com</p>
       <p>&copy; {new Date().getFullYear()} octowild. All rights reserved.</p>
     </footer>
   );
