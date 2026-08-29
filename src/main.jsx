@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Home from '/Pages/Home.jsx';
+import Home from 'Assets/Pages/Home.jsx';
 
 const rootElement = document.getElementById('root');
 
